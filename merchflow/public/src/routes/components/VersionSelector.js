@@ -95,31 +95,48 @@ export class VersionSelector extends React.Component {
                     (!_.isEmpty(versions)) && (
                         <DropdownMenu>
                             <DropdownItem header>
-                                Bootstrap 4 Versions:
+                                <p className="mb-3">Events that you are a planner of: </p>
+                                <div className="hr-text hr-text-center mt-0 mb-0">
+                                </div>
                             </DropdownItem>
-                            {
-                                _.map(versions, (version, index) => (
-                                    <DropdownItem
-                                        key={ index }
-                                        href={ version.demoUrl }
-                                        className="d-flex"
-                                        active={ version === currentVersion }
-                                    >
-                                        <span>
-                                            { version.label } { version.version }
-                                            <br />
-                                            <span className="small">
-                                                { moment(version.date).format("ddd, MMM DD, YYYY h:mm:ss A") }
-                                            </span>
+                            
+                                <DropdownItem
+                                >
+                                    <span>
+                                        Pennapps XXI
+                                        <br />
+                                        <span className="small">
+                                            Fri, Sept 11, 2020 - Sun, Sept 13, 2020
                                         </span>
-                                        {
-                                            (version === currentVersion) && (
-                                                <i className="fa fa-fw fa-check text-success ml-auto align-self-center pl-3" />
-                                            )
-                                        }
-                                    </DropdownItem>
-                                ))
-                            }
+                                        <i className="fa fa-fw fa-check text-success ml-auto align-self-center pl-3" />
+                                    </span>
+                                    <div className="hr-text hr-text-center mt-2 mb-0">
+                                    </div>
+                                </DropdownItem>
+
+                                <DropdownItem>
+                                    <span>
+                                        UWU Virtual Social Gathering
+                                        <br />
+                                        <span className="small">
+                                            Mon, Sept 14, 2020 - Thur, Sept 17, 2020
+                                        </span>
+                                    </span>
+                                    <div className="hr-text hr-text-center mt-2 mb-0">
+                                    </div>
+                                </DropdownItem>
+                                <DropdownItem>
+                                    <span>
+                                        HackOWO 2020
+                                        <br />
+                                        <span className="small">
+                                            Wed, Oct 21, 2020 - Sun, Oct 25, 2020
+                                        </span>
+                                    </span>
+                                    <div className="hr-text hr-text-center mt-2 mb-0">
+                                    </div>
+                                </DropdownItem>
+                            
                         </DropdownMenu>
                     )
                 }

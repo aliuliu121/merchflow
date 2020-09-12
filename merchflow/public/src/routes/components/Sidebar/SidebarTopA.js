@@ -3,16 +3,24 @@ import faker from 'faker/locale/en_US';
 import { Link } from 'react-router-dom';
 
 import { 
+    Button,
     Sidebar,
     UncontrolledButtonDropdown,
+    UncontrolledTooltip,
     Avatar,
     AvatarAddOn,
     DropdownToggle,
     DropdownMenu,
     DropdownItem
 } from './../../../components';
+import {
+    HeaderDemo
+} from '../../components/HeaderDemo'
 import { randomAvatar } from './../../../utilities';
 import logo from './../../../images/merchflow_square.jpg'
+import { VersionSelector } from '../VersionSelector';
+
+import pennappsLogo from '../../../img/pennappsxxi_logo.png'
 
 const avatarImg = randomAvatar();
 
@@ -22,7 +30,44 @@ const SidebarTopA = () => (
         <Sidebar.HideSlim>
             <Sidebar.Section className="pt-0">
                 <Link to="/" className="d-block">
-                    <img src={logo} width='100px'></img>
+
+                    <div className="hr-text hr-text-center mt-4 mb-4">
+                    </div>
+
+                    <HeaderDemo
+                        title="Current Event "
+                        className="mb-0 text-center mb-lg-3"
+                    />
+                    <div>
+                    <div className="d-flex">
+                        <VersionSelector
+                            down
+                            sidebar
+                            dashboard="Airframe"
+                            render={(currentVersion) => (
+                                <React.Fragment>
+                                    <div className="h4 fw-600 align-self-center sidebar-logo mb-1 text-center">
+                                        <img src={pennappsLogo} className="mb-1" width='200px' />
+                                        <i className="fa align-self-center fa-angle-down sidebar__link--muted"></i>
+                                    </div>
+                                    <div className="hr-text hr-text-center pt-4 pb-2">
+                                    </div>
+                                    <div
+                                        className="job-title small text-left sidebar__link--muted"
+                                    >
+                                    </div>
+                                </React.Fragment>
+                            )}
+                        />
+                    </div>
+                    </div>
+
+
+
+
+
+
+                    
                     {/* <Sidebar.HideSlim>
                         <Avatar.Image
                             size="lg"

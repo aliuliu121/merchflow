@@ -21,7 +21,8 @@ const Error404 = () => (
         <EmptyLayout.Section center>
             { /* START Header */}
             <HeaderAuth 
-                title="Error 404"
+                title="Oh no! Error 404. :("
+                text=""
             />
             { /* END Header */}
             { /* START Form */}
@@ -36,7 +37,7 @@ const Error404 = () => (
                             <ThemeConsumer>
                             {
                                 ({ color }) => (
-                                    <Button color={ color } tag={ Link } to="/">
+                                    <Button style={{color:"#344d51"}} tag={ Link } to="/">
                                         <i className="fa fa-search"></i>
                                     </Button>
                                 )

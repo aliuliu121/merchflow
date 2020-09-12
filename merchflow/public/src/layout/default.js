@@ -17,12 +17,12 @@ import {
 } from './../routes';
 
 const favIcons = [
-    { rel: 'icon', href: './../img/merchflow_favicon.jpg' },
+    { rel: 'icon', href: './../img/merchflow_favicon.png' },
 
-    { rel: 'apple-touch-icon', sizes: '180x180', href: require('./../img/merchflow_favicon.jpg') },
+    { rel: 'apple-touch-icon', sizes: '180x180', href: require('./../img/merchflow_favicon.png') },
 
-    { rel: 'icon', type: 'image/jpg', sizes: '32x32', href: require('./../img/merchflow_favicon.jpg') },
-    { rel: 'icon', type: 'image/jpg', sizes: '16x16', href: require('./../img/merchflow_favicon.jpg') }
+    { rel: 'icon', type: 'image/jpg', sizes: '32x32', href: require('./../img/merchflow_favicon.png') },
+    { rel: 'icon', type: 'image/jpg', sizes: '16x16', href: require('./../img/merchflow_favicon.png') }
 ];
 
 class AppLayout extends React.Component {

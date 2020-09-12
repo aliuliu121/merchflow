@@ -16,7 +16,8 @@ const TinyDonutChart = (props) => {
     return (
         <PieChart width={ 80 } height={ 80 }>
             <Pie
-                data={data}
+                data={[{name: 'GroupA', value: parseInt(props.groupA)},
+                       {name: 'GroupB', value: parseInt(props.groupB)}]}
                 dataKey="value"
                 stroke={ colors[ props.strokeColor ] }
                 innerRadius={ 28 }
@@ -30,11 +31,15 @@ const TinyDonutChart = (props) => {
 };
 
 TinyDonutChart.propTypes = {
+    groupA: PropTypes.string,
+    groupB: PropTypes.string,
     pieColor: PropTypes.string,
     strokeColor: PropTypes.string,
     pieBg: PropTypes.string
 };
 TinyDonutChart.defaultProps = {
+    groupA: "50",
+    groupB: "50",
     pieColor: "primary",
     strokeColor: "white",
     pieBg: "200"

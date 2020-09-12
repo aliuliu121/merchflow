@@ -40,19 +40,21 @@ const CardSystem = (props) => (
            <div className="d-flex">
                <span>
                     <Badge pill className="mb-3" color={ props.badgeColor } >
-                        <i className={` fa fa-fw fa-caret-${ 69 }`} />
-                        { 69 }%
+                        <i className={` fa fa-fw fa-caret-up`} />
+                        { props.caret } {props.unit}
                     </Badge>
                     <h6 className="mb-0">
                         { props.title }
                     </h6>
                     <h2 className="mb-3">
-                        { 69 } <small>{ props.unit }</small>
+                        { props.value } <small>{ props.unit }</small>
                     </h2>
                 </span>
                 <span className="text-right ml-auto">
                     <TinyDonutChart 
                         pieColor={props.pieColor}
+                        groupA={props.groupA}
+                        groupB={props.groupB}
                     />
                 </span>
             </div>
@@ -64,12 +66,18 @@ const CardSystem = (props) => (
 CardSystem.propTypes = {
     title: PropTypes.node,
     badgeColor: PropTypes.string,
+    value: PropTypes.string,
+    caret: PropTypes.string,
+    groupA: PropTypes.string,
+    groupB: PropTypes.string,
     unit: PropTypes.node,
     pieColor: PropTypes.string
 };
 CardSystem.defaultProps = {
     title: "Waiting...",
     badgeColor: "secondary",
+    value: "58",
+    caret: "23",
     unit: "%",
     pieColor: "500"
 };

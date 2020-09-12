@@ -14,8 +14,8 @@ import {
     DropdownItem
 } from './../../../components';
 import {
-    HeaderDemo
-} from '../../components/HeaderDemo'
+    HeaderMain
+} from '../../components/HeaderMain'
 import { randomAvatar } from './../../../utilities';
 import logo from './../../../images/merchflow_square.jpg'
 import { VersionSelector } from '../VersionSelector';
@@ -34,9 +34,10 @@ const SidebarTopA = () => (
                     <div className="hr-text hr-text-center mt-4 mb-4">
                     </div>
 
-                    <HeaderDemo
-                        title="Current Event "
+                    <HeaderMain
+                        title="Current Event"
                         className="mb-0 text-center mb-lg-3"
+                        smaller="1"
                     />
                     <div>
                     <div className="d-flex">

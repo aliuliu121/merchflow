@@ -24,40 +24,40 @@ export class DraggableProjects extends React.Component {
             projects: [
                 {
                     id: uid(),
-                    title: faker.commerce.productName(),
+                    title: "andrew@andrew.cmu.edu",
                     badgeColor: "success",
-                    badgeTitle: "Active",
-                    progressValue: "76",
-                    completeValue: "13",
-                    myTasksValue: "35",
-                    daysDueValue: "6"
+                    badgeTitle: "shipped",
+                    progressValue: "100",
+                    completeValue: "1",
+                    myTasksValue: "2",
+                    daysDueValue: "Pittsburgh, PA"
                 }, {
                     id: uid(),
-                    title: faker.commerce.productName(),
+                    title: "carnegie@andrew.cmu.edu",
                     badgeColor: "danger",
-                    badgeTitle: "Suspended",
-                    progressValue: "23",
-                    completeValue: "6",
-                    myTasksValue: "87",
-                    daysDueValue: "15"
+                    badgeTitle: "Missing confirmation",
+                    progressValue: "50",
+                    completeValue: "4",
+                    myTasksValue: "3",
+                    daysDueValue: "Ellicott City, MD"
                 }, {
                     id: uid(),
-                    title: faker.commerce.productName(),
-                    badgeColor: "secondary",
-                    badgeTitle: "Archived",
-                    progressValue: "4",
-                    completeValue: "98",
-                    myTasksValue: "21",
-                    daysDueValue: "7"
-                }, {
-                    id: uid(),
-                    title: faker.commerce.productName(),
+                    title: "mellon@andrew.cmu.edu",
                     badgeColor: "warning",
-                    badgeTitle: "Paused",
-                    progressValue: "63",
-                    completeValue: "98",
-                    myTasksValue: "21",
-                    daysDueValue: "7"
+                    badgeTitle: "Missing form",
+                    progressValue: "0",
+                    completeValue: "-",
+                    myTasksValue: "-",
+                    daysDueValue: "-"
+                }, {
+                    id: uid(),
+                    title: "tartan@andrew.cmu.edu",
+                    badgeColor: "warning",
+                    badgeTitle: "Missing form",
+                    progressValue: "0",
+                    completeValue: "-",
+                    myTasksValue: "-",
+                    daysDueValue: "-"
                 }
             ]
         };

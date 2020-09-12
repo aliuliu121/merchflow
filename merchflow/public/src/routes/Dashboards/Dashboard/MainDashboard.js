@@ -56,7 +56,7 @@ const ProjectsDashboard = () => (
                     className="mb-4 mb-lg-5"
                 />
                 <p>
-                    Hi, there! This is the dashboard.
+                    Hi, there! Welcome to merchflow, merchandise distrubtor helper for vitual events. This is your dashboard to view overall statistics on participant&apos;s responses. 
                 </p>
             </Col>
 
@@ -69,8 +69,12 @@ const ProjectsDashboard = () => (
 
             <Col lg={ 3 } md={ 6 }>
                <CardSystem
-                    title="Number of participant"
-                    unit=""
+                    title="Number of participants"
+                    unit="people"
+                    value="271"
+                    caret="23"
+                    groupA="100"
+                    groupB="0"
                     badgeColor="primary"
                     pieColor="primary"
                />
@@ -78,21 +82,37 @@ const ProjectsDashboard = () => (
             <Col lg={ 3 } md={ 6 }>
                <CardSystem
                     title="Number of invite code sent"
-                    badgeColor="purple"
-                    pieColor="purple"
+                    unit="forms"
+                    badgeColor="dark"
+                    pieColor="dark"
+                    value="260"
+                    groupA="96"
+                    groupB="4"
+                    caret="5"
                />
             </Col>
             <Col lg={ 3 } md={ 6 }>
                 <CardSystem
                     title="Number of forms completed"
-                    badgeColor="success"
-                    pieColor="success"
+                    unit="forms"
+                    badgeColor="light"
+                    pieColor="light"
+                    value="92"
+                    groupA="34"
+                    groupB="66"
+                    caret="1"
                />
             </Col>
             <Col lg={ 3 } md={ 6 }>
                 <CardSystem
                     title="Number of shipped packages"
-                    pieColor="yellow"
+                    unit="packages"
+                    badgeColor="secondary"
+                    pieColor="secondary"
+                    value="13"
+                    groupA="6"
+                    groupB="94"
+                    caret="0"
                />
             </Col>
 
@@ -137,6 +157,8 @@ const ProjectsDashboard = () => (
                                 <th className="bt-0">Email</th>
                                 <th className="bt-0">Name</th>
                                 <th className="bt-0">Date</th>
+                                <th className="bt-0">Address</th>
+                                <th className="bt-0">Delivery range</th>
                                 <th className="bt-0 text-right">Action</th>
                             </tr>
                         </thead>

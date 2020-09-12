@@ -22,10 +22,10 @@ const ProjectsList = (props) => (
             <div className="d-flex justify-content-between">
                 <div className="text-center">
                     <h5 className="mb-1">
-                        { props.completeValue }%
+                        { props.completeValue } mi
                     </h5>
                     <span>
-                        Complete
+                        Delivery range
                     </span>
                 </div>
                 <div className="text-center">
@@ -33,7 +33,7 @@ const ProjectsList = (props) => (
                         { props.myTasksValue }
                     </h5>
                     <span>
-                        My Tasks
+                        Merch responsible
                     </span>
                 </div>
                 <div className="text-center">
@@ -41,7 +41,7 @@ const ProjectsList = (props) => (
                         { props.daysDueValue }
                     </h5>
                     <span>
-                        Days Due
+                        Location
                     </span>
                 </div>  
             </div>

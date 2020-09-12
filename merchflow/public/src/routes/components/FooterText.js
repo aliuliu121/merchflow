@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 const FooterText = (props) => (
 	<React.Fragment>
-		<p>PennApps XXI project. Built with AirFrame</p>
+		<p>PennApps XXI project by Amy & Allen Liu. Built with AirFrame</p>
 	</React.Fragment>
 )
 FooterText.propTypes = {

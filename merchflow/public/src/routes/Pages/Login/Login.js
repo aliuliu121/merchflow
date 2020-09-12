@@ -17,11 +17,13 @@ import { HeaderAuth } from "../../components/Pages/HeaderAuth";
 import { FooterAuth } from "../../components/Pages/FooterAuth";
 
 const Login = () => (
-    <EmptyLayout>
+    <EmptyLayout >
         <EmptyLayout.Section center>
             { /* START Header */}
             <HeaderAuth 
-                title="Sign In to Application"
+                title="sign in to your merchflow account"
+                text=""
+                className="mt-0"
             />
             { /* END Header */}
             { /* START Form */}
@@ -31,9 +33,6 @@ const Login = () => (
                         Email Adress
                     </Label>
                     <Input type="email" name="email" id="emailAdress" placeholder="Enter email..." className="bg-white" />
-                    <FormText color="muted">
-                        We&amp;ll never share your email with anyone else.
-                    </FormText>
                 </FormGroup>
                 <FormGroup>
                     <Label for="password">
@@ -47,7 +46,7 @@ const Login = () => (
                 <ThemeConsumer>
                 {
                     ({ color }) => (
-                        <Button color={ color } block tag={ Link } to="/">
+                        <Button style={{backgroundColor:"#344d51"}} block tag={ Link } to="/">
                             Sign In
                         </Button>
                     )

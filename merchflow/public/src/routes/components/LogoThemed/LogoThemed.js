@@ -42,9 +42,9 @@ const LogoThemed = ({ checkBackground, className, ...otherProps }) => (
                     //     getLogoUrlBackground(style, color) :
                     //     getLogoUrl(style, color)
                 }
-                className={ classNames('d-block', className) }
+                className={ classNames('d-block mt-3', className) }
                 width='200px'
-                alt="Airframe Logo"
+                alt="merchflow logo"
                 { ...otherProps }
             />
         )

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-import { LogoThemed } from './../LogoThemed/LogoThemed';
+import logo from '../../../img/merchflow_logo_transparent.png';
 
 const HeaderAuth = (props) => (
     <div className="mb-4">
@@ -12,7 +12,12 @@ const HeaderAuth = (props) => (
                     props.icon ? (
                         <i className={ `fa fa-${ props.icon } fa-3x ${ props.iconClassName }` }></i>
                     ) : (
-                        <LogoThemed checkBackground height="30" />
+                        <img
+                            src={logo}
+                            width='350px'
+                            className='mb-0'
+                            alt="merchflow logo"
+                        />
                     )
                 }
             </Link>

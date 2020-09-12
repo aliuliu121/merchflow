@@ -256,13 +256,22 @@ export class AdvancedTableA extends React.Component {
                     <React.Fragment>
                         <div className="d-flex justify-content-end align-items-center mb-2">
                             <h6 className="my-0">
-                                AdvancedTable A
+                                All delivery form responses for the current event
                             </h6>
                             <div className="d-flex ml-auto">
                                 <CustomSearch
                                     className="mr-2"
                                     { ...props.searchProps }
                                 />
+                                <ButtonGroup className="mr-2">
+                                    <Button
+                                        size="sm"
+                                        color="dark"
+                                        onClick={ this.handleDeleteRow.bind(this) }
+                                    >
+                                        Generate shipping labels
+                                    </Button>
+                                </ButtonGroup>
                                 <ButtonGroup>
                                     <CustomExportCSV
                                         { ...props.csvProps }

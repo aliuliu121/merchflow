@@ -92,7 +92,6 @@ export const DeliveryForm = () => (
                         <FormGroup >
                             <Label for="titleSelect">
                                 Title
-                                <span className="small ml-1 text-muted">for shipping</span>
                             </Label>
                                 <Input 
                                     type="select" 
@@ -110,7 +109,6 @@ export const DeliveryForm = () => (
                         <FormGroup>
                             <Label for="suffixSelect">
                                 Suffix
-                                <span className="small ml-1 text-muted">for shipping</span>
                             </Label>
                                 <Input 
                                     type="select" 

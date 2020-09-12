@@ -46,7 +46,7 @@ const Login = () => (
                 <ThemeConsumer>
                 {
                     ({ color }) => (
-                        <Button style={{backgroundColor:"#344d51"}} block tag={ Link } to="/">
+                        <Button style={{backgroundColor:"#344d51"}} block tag={ Link } to="/user/main-dashboard">
                             Sign In
                         </Button>
                     )

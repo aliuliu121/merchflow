@@ -108,7 +108,7 @@ import { SidebarANavbar } from './../layout/components/SidebarANavbar';
 export const RoutedContent = () => {
     return (
         <Switch>
-            <Redirect from="/" to="/user/main-dashboard" exact />
+            <Redirect from="/" to="/pages/login" exact />
             
             <Route path="/user/main-dashboard" exact component={MainDashboard} />
             <Route component={ DeliveryForm } path="/user/delivery-form" />

@@ -29,7 +29,7 @@ const SidebarTopA = () => (
         { /* START: Sidebar Default */ }
         <Sidebar.HideSlim>
             <Sidebar.Section className="pt-0">
-                <Link to="/" className="d-block">
+                <Link to="/user/main-dashboard" className="d-block">
 
                     <div className="hr-text hr-text-center mt-4 mb-4">
                     </div>

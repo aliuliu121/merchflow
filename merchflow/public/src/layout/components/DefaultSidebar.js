@@ -25,7 +25,7 @@ export const DefaultSidebar = () => (
         { /* START SIDEBAR: Only for Desktop */ }
         <Sidebar.HideSlim>
             <Sidebar.Section>
-                <Link to="/" className="sidebar__brand">
+                <Link to="/user/main-dashboard" className="sidebar__brand">
                     <LogoThemed checkBackground />
                 </Link>
             </Sidebar.Section>

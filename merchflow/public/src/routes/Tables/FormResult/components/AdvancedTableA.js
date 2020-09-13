@@ -106,8 +106,8 @@ export class AdvancedTableA extends React.Component {
 
     createColumnDefinitions() {
         return [{
-            dataField: 'id',
-            text: 'Product ID',
+            dataField: 'email',
+            text: 'Email',
             headerFormatter: column => (
                 <React.Fragment>
                     <span className="text-nowrap">{ column.text }</span>
@@ -122,11 +122,11 @@ export class AdvancedTableA extends React.Component {
             )
         }, {
             dataField: 'name',
-            text: 'Product Name',
+            text: 'Name',
             sort: true,
             sortCaret,
             formatter: (cell) => (
-                <span className="text-inverse">
+                <span className="text">
                     { cell }
                 </span>
             ),
@@ -135,28 +135,28 @@ export class AdvancedTableA extends React.Component {
                 getFilter: filter => { this.nameFilter = filter; }
             })
         }, {
-            dataField: 'quality',
-            text: 'Product Quality',
+            dataField: 'status',
+            text: 'Status',
             formatter: (cell) => {
                 let pqProps;
                 switch (cell) {
-                    case ProductQuality.Good:
+                    case "Missing form":
                         pqProps = {
-                            color: 'success',
-                            text: 'Good'
+                            color: 'warning',
+                            text: 'Missing form'
                         }
                     break;
-                    case ProductQuality.Bad:
+                    case "Missing confirmation":
                         pqProps = {
                             color: 'danger',
-                            text: 'Bad'
+                            text: 'Missing confirmation'
                         }
                     break;
-                    case ProductQuality.Unknown:
+                    case "Success":
                     default:
                         pqProps = {
-                            color: 'secondary',
-                            text: 'Unknown'
+                            color: 'success',
+                            text: 'Shipped'
                         }
                 }
 
@@ -171,15 +171,93 @@ export class AdvancedTableA extends React.Component {
             ...buildCustomSelectFilter({
                 placeholder: 'Select Quality',
                 options: [
-                    { value: ProductQuality.Good, label: 'Good' },
-                    { value: ProductQuality.Bad, label: 'Bad' },
-                    { value: ProductQuality.Unknown, label: 'Unknown' }
+                    { value: "Shipped", label: 'Shipped' },
+                    { value: "Missing confirmation", label: 'Missing confirmation' },
+                    { value: "Missing form", label: 'Missing form' }
                 ],
                 getFilter: filter => { this.qualityFilter = filter; }
             })
         }, {
-            dataField: 'price',
-            text: 'Product Price',
+            dataField: 'address',
+            text: 'Address',
+            sort: true,
+            sortCaret,
+            formatter: (cell) => (
+                <span className="text">
+                    { cell }
+                </span>
+            ),
+            ...buildCustomTextFilter({
+                placeholder: 'Enter address ...',
+                getFilter: filter => { this.nameFilter = filter; }
+            })
+        }, {
+            dataField: 'zipcode',
+            text: 'Zipcode',
+            sort: true,
+            sortCaret,
+            formatter: (cell) => (
+                <span className="text">
+                    { cell }
+                </span>
+            ),
+            ...buildCustomTextFilter({
+                placeholder: 'Enter zip ...',
+                getFilter: filter => { this.nameFilter = filter; }
+            })
+        }, {
+            dataField: 'phoneNum',
+            text: 'Phone',
+            sort: true,
+            sortCaret,
+            formatter: (cell) => (
+                <span className="text">
+                    { cell }
+                </span>
+            ),
+            ...buildCustomTextFilter({
+                placeholder: 'Enter number ...',
+                getFilter: filter => { this.nameFilter = filter; }
+            })
+        }, {
+            dataField: 'willing',
+            text: 'Willing to help?',
+            formatter: (cell) => {
+                let pqProps;
+                switch (cell) {
+                    case "yes":
+                        pqProps = {
+                            color: 'success',
+                            text: 'Yes!'
+                        }
+                        break;
+                    default:
+                        pqProps = {
+                            color: 'light',
+                            text: 'no response'
+                        }
+                        break;
+                }
+
+                return (
+                    <Badge color={pqProps.color}>
+                        { pqProps.text }
+                    </Badge>
+                )
+            },
+            sort: true,
+            sortCaret,
+            ...buildCustomSelectFilter({
+                placeholder: 'Select option',
+                options: [
+                    { value: "yes", label: 'Yes!' },
+                    { value: "no", label: 'no response' },
+                ],
+                getFilter: filter => { this.qualityFilter = filter; }
+            })
+        }, {
+            dataField: 'deliveryRange',
+            text: 'Range',
             sort: true,
             sortCaret,
             ...buildCustomNumberFilter({
@@ -187,22 +265,11 @@ export class AdvancedTableA extends React.Component {
                 getFilter: filter => { this.priceFilter = filter; }
             })
         }, {
-            dataField: 'satisfaction',
-            text: 'Buyer Satisfaction',
-            sort: true,
-            sortCaret,
-            formatter: (cell) =>
-                <StarRating at={ cell } max={ 6 } />,
-            ...buildCustomSelectFilter({
-                placeholder: 'Select Satisfaction',
-                options: _.times(6, (i) => ({ value: i + 1, label: i + 1 })),
-                getFilter: filter => { this.satisfactionFilter = filter; }
-            })
-        }, {
-            dataField: 'inStockDate',
-            text: 'In Stock From',
-            formatter: (cell) =>
-                moment(cell).format('DD/MM/YYYY'),
+            dataField: 'completionDate',
+            text: 'Form completion',
+            formatter: (cell) => {
+                cell=="-"? moment(cell).value="-" : moment(cell).format('DD/MM/YYYY')
+            },
             filter: dateFilter({
                 className: 'd-flex align-items-center',
                 comparatorClassName: 'd-none',
@@ -212,6 +279,20 @@ export class AdvancedTableA extends React.Component {
             }),
             sort: true,
             sortCaret
+        }, {
+            dataField: 'feedback',
+            text: 'Notes & Feedback',
+            formatter: (cell) => (
+                <span className="text">
+                    { cell }
+                </span>
+            ),
+            sort: true,
+            sortCaret,
+            ...buildCustomTextFilter({
+                placeholder: 'Enter keywords ...',
+                getFilter: filter => { this.nameFilter = filter; }
+            })
         }]; 
     }
 
@@ -268,8 +349,9 @@ export class AdvancedTableA extends React.Component {
                                         size="sm"
                                         color="dark"
                                         onClick={ this.handleDeleteRow.bind(this) }
-                                    >
-                                        Generate shipping labels
+                                        href='/public/src/resources/merchflow-sample-shipping-labels.pdf' 
+                                        download="merchflow-sample-shipping-labels.pdf">
+                                            Generate shipping labels
                                     </Button>
                                 </ButtonGroup>
                                 <ButtonGroup>

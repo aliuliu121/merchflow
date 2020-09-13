@@ -62,13 +62,14 @@ const NavbarActivityFeed = (props) => (
                                 </Media>
                                 <Media body>
                                     <span className="h6">
-                                        { faker.name.firstName() } { faker.name.lastName() }
-                                    </span> changed Description to &quot;{ faker.random.words() }&quot;
-                                    <p className="mt-2 mb-1">
-                                        { faker.lorem.sentence() }
-                                    </p>
+                                        Andrew Carnegie
+                                    </span> just completed the delivery form for event 
+                                    <span className="h6"> PennApps XXI</span>.
                                     <div className="small mt-2">
-                                        { faker.date.past().toString() }
+                                        Click on the form result page to view submission.
+                                    </div>
+                                    <div className="small mt-2">
+                                        Sun Sept 17 2020 04:11:36 GMT-0400 (EDT)
                                     </div>
                                 </Media>
                             </Media>

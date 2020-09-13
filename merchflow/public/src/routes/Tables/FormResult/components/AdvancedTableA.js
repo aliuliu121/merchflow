@@ -40,14 +40,26 @@ const sortCaret = (order) => {
         return <i className={`fa fa-fw text-muted fa-sort-${order}`}></i>
 }
 
-const generateRow = (index) => ({
-    id: index,
-    name: faker.commerce.productName(),
-    quality: ProductQuality.Good,
-    price: (1000 + Math.random() * 1000).toFixed(2),
-    satisfaction: Math.round(Math.random() * 6),
-    inStockDate: faker.date.past()
-});
+const generateRow = (index) =>{
+    const first = faker.name.firstName();
+    const second = faker.name.lastName();
+    const willing = faker.random.arrayElement(["yes", "no"])
+
+    return (
+        {
+            email: faker.internet.email(first, second, 'gmail') + ".com",
+            name: second + ", " + first,
+            status: faker.random.arrayElement(['Missing form', 'Missing confirmation', 'Shipped']),
+            address: faker.address.streetAddress("true"),
+            zipcode: faker.address.zipCode("#####"),
+            phoneNum: faker.phone.phoneNumber("###-###-####"),
+            willing: willing,
+            completionDate: faker.date.past().toString(),
+            deliveryRange: willing == "yes" ? faker.random.number({min:1, max:10}) : "0",
+            feedback: faker.random.number(3) == 0 ? "Nothing much, thanks!" : faker.random.number(10) == 0 ? "N/a" : ""
+        }
+    );
+};
 
 export class AdvancedTableA extends React.Component {
     constructor() {
@@ -211,7 +223,7 @@ export class AdvancedTableA extends React.Component {
             sort: true,
             sortCaret,
             formatter: (cell) => (
-                <span className="text">
+                <span className="text text-nowrap">
                     { cell }
                 </span>
             ),
@@ -267,9 +279,8 @@ export class AdvancedTableA extends React.Component {
         }, {
             dataField: 'completionDate',
             text: 'Form completion',
-            formatter: (cell) => {
-                cell=="-"? moment(cell).value="-" : moment(cell).format('DD/MM/YYYY')
-            },
+            formatter: (cell) =>
+                moment(cell).format('MM/DD/YYYY'),
             filter: dateFilter({
                 className: 'd-flex align-items-center',
                 comparatorClassName: 'd-none',
@@ -279,6 +290,29 @@ export class AdvancedTableA extends React.Component {
             }),
             sort: true,
             sortCaret
+            // sort: true,
+            // sortCaret,
+            // formatter: (cell) => (
+            //     <span className="text text-nowrap">
+            //         { cell }
+            //     </span>
+            // ),
+            // ...buildCustomTextFilter({
+            //     placeholder: 'Enter date ...',
+            //     getFilter: filter => { this.nameFilter = filter; }
+            // })
+            // formatter: (cell) => {
+            //     moment(cell).format('MM/DD/YYY')
+            // },
+            // filter: dateFilter({
+            //     className: 'd-flex align-items-center',
+            //     comparatorClassName: 'd-none',
+            //     dateClassName: 'form-control form-control-sm',
+            //     comparator: Comparator.GT,
+            //     getFilter: filter => { this.stockDateFilter = filter; }
+            // }),
+            // sort: true,
+            // sortCaret
         }, {
             dataField: 'feedback',
             text: 'Notes & Feedback',

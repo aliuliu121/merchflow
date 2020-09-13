@@ -145,7 +145,7 @@ const ProjectsDashboard = () => (
                 <Card className="mb-3">
                     <CardBody>
                         <CardTitle className="mb-1 d-flex">
-                            <h6>Recent form completions</h6>
+                            <h6>Recent form completions (simplified view)</h6>
                             <Button color="link" size="sm" className="pt-0 ml-auto">
                                 View All <i className="fa fa-angle-right"></i>
                             </Button>

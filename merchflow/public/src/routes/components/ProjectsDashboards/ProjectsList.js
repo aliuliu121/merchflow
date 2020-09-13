@@ -18,7 +18,7 @@ const ProjectsList = (props) => (
                     { props.badgeTitle }
                 </Badge>
             </div>
-            <Progress value={ `${ props.progressValue }` } className="mb-4" style={{height: "5px"}} />
+            <Progress value={ `${ props.progressValue }` } className="mb-4" style={{height: "5px", color:"light"}} />
             <div className="d-flex justify-content-between">
                 <div className="text-center">
                     <h5 className="mb-1">
